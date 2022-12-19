@@ -1,7 +1,7 @@
 package entities;
 
 import platformer.Game;
-import static utils.Constants.Directions.LEFT;
+import static utils.Constants.Directions.*;
 import static utils.Constants.EnemyConstants.*;
 import static utils.HelpMethods.CanMoveHere;
 import static utils.HelpMethods.GetEntityYPosUnderRoofOrAboveFloor;
@@ -45,6 +45,22 @@ public class Crabby extends Enemy {
                     move(lvlData);
                     break;
             }
+        }
+    }
+
+    public int flipX() {
+        if (walkDir == RIGHT) {
+            return width;
+        } else {
+            return 0;
+        }
+    }
+
+    public int flipW() {
+        if(walkDir == RIGHT){
+            return -1;
+        }else{
+            return 1;
         }
     }
 }
